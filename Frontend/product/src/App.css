@@ -1,0 +1,244 @@
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* Headers */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+}
+
+.header-content {
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 8px 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.053) 0px 3px 8px;
+}
+
+.header-head {
+  display: flex;
+  justify-content: left;
+}
+
+.header-logo {
+  padding: 5px;
+}
+
+.logo {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  padding-top: 10px;
+  font-size: 15px;
+  color: #EB6D4A;
+  letter-spacing: 1px;
+}
+
+.sub-logo {
+  font-size: 10px;
+  text-align: justify;
+  color: black;
+  opacity: 0.6;
+  padding: 1px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 2px;
+}
+
+.head-search {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-icon {
+  padding-top: 10px;
+}
+
+.nav-search {
+  width: 200px;
+  height: 20px;
+  color: black;
+  border: none;
+  background-color: white;
+  outline: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.nav-search:hover {
+  border-bottom: 1px solid #f28c39;
+}
+
+.header-menu-items {
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  padding-right: 10px;
+}
+
+.header-link {
+  display: flex;
+  color: black;
+  padding: 15px 0 15px;
+  gap: 20px;
+}
+
+.icon {
+  padding-left: 10px
+}
+
+.header-link :hover {
+  color: #f28c39;
+}
+
+.header-link-name {
+  position: relative;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.header-link-name:after {
+  content: "";
+  position: absolute;
+  background-color: #FFC55B;
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+.header-link-name:hover {
+  color: #FFC55B;
+}
+
+.header-link-name:hover:after {
+  width: 100%;
+  color: #FFC55B;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* Content */
+.container {
+  background-color: #EDE8F5;
+  display: flex;
+  box-sizing: content-box;
+}
+
+main {
+  width: 100%;
+  /* height: 100vh; */
+  padding: 50px;
+  box-sizing: content-box;
+}
+
+/* Sidebar */
+.sidebar {
+  color: black;
+  background-color: white;
+  height: auto;
+  width: 230px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.053) 0px 3px 8px;
+  padding-bottom: 100px;
+}
+
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 5px;
+  cursor: pointer;
+  gap: 20px;
+}
+
+.side-head {
+  font-size: 20px;
+  color: Black;
+  padding: 5px;
+  text-align: start;
+}
+
+.side-head:hover {
+  color: #f28c39;
+}
+
+.bars {
+  display: flex;
+  padding-left: 10px;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.bars:hover {
+  color: #f28c39;
+}
+
+.menu-items {
+  padding: 5px 0 10px 0;
+  text-align: center;
+}
+
+.main-menu {
+  padding: 10px 0;
+}
+
+.other-menu {
+  padding: 20px 0;
+}
+
+.menu-item-head {
+  padding-left: 10px;
+  padding-bottom: 15px;
+  text-align: start;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  opacity: 0.6;
+}
+
+.link {
+  display: flex;
+  color: black;
+  padding: 15px 0 15px;
+  gap: 15px;
+}
+
+.icon {
+  padding-left: 10px;
+  margin-left: 8px;
+}
+
+.link:hover {
+  background-color: #f5e3d3;
+  color: #f28c39;
+  border-right: 4px solid #f28c39;
+}
+
+.link-name {
+  font-size: 15px;
+}

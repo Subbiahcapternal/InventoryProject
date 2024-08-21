@@ -1,0 +1,289 @@
+.order-container {
+    width: 100%;
+    height: 100vh;
+    /* padding: 5px; */
+}
+
+.order-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.heading-name {
+    padding: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: black;
+    width: 20%;
+}
+
+.title {
+    text-align: start;
+    padding-bottom: 5px;
+}
+
+.sub-title {
+    text-align: start;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    opacity: 0.6;
+}
+
+.sub-title-ul {
+    list-style: none;
+}
+
+.sub-title-list {
+    display: inline;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.sub-title-link {
+    color: black;
+}
+
+.sub-title-link:hover {
+    color: #f28c39;
+    opacity: 1;
+}
+
+.order-btn {
+    /* background-color: aqua; */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f28c39;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-btn {
+    width: 150px;
+    height: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    /* padding: 5px; */
+    margin-right: 10px;
+    margin-left: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add-icon {
+    padding: 10px 0 10px 15px;
+    cursor: pointer;
+}
+
+.add-order:hover {
+    background-color: rgb(246, 191, 143)
+}
+
+.export-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 130px;
+    height: 40px;
+    color: #f28c39;
+    border: 1px solid #f28c39;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.export-btn {
+    width: 100px;
+    height: 20px;
+    background-color: transparent;
+    color: #f28c39;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    margin-left: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.export-icon {
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+}
+
+.export-order:hover {
+    background-color: #f5e3d3
+}
+
+.inventory-content-card {
+    width: 100%;
+    height: auto;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    /* background-color: white; */
+
+}
+
+.order-content {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.053) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.table-head {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+}
+
+.table-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.373);
+    border-radius: 5px;
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+}
+
+.table-search-icon {
+    padding: 0;
+}
+
+.table-search-input {
+    width: 200px;
+    height: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.table-card {
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.table {
+    border-radius: 5px;
+}
+
+th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    /* opacity: 0.5; */
+    padding: 10px;
+}
+.productName{
+    text-align: justify;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.productId{
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    color: #3E3E3E;
+    padding-top: 2px;
+}
+
+.product_id{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    color: #3E3E3E;
+    padding-left: 5px;
+}
+.status {
+    width: 120px;
+    height: 20px;
+    padding: 5px 25px;
+    border-radius: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.action-ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.action-list {
+    display: inline;
+    padding: 5px;
+}
+
+.update-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #007DFE;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #92c2f2;
+}
+
+.view-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #14ae4a;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background-color: #4fe182;
+}
+
+.delete-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #ee1c1f;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #f05a5c;
+}

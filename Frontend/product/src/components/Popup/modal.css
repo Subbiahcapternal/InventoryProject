@@ -1,0 +1,154 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+  height: auto;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.modal-title {
+  text-transform: uppercase;
+}
+
+.close-btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+.modal-form {
+  display: flex;
+  padding: 5px;
+}
+
+.add-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  /* background-color: aqua; */
+}
+
+.form-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 40%;
+  height: fit-content;
+  padding: 10px 10px 10px 20px;
+}
+
+.form-label {
+  text-align: start;
+  width: 100%;
+  color: black;
+  padding: 10px 5px 10px 0;
+}
+
+.form-input {
+  width: 95%;
+  height: 15px;
+  border-radius: 4px;
+  box-sizing: content-box;
+  border: 1px solid rgba(158, 158, 158, 0.922);
+  box-shadow: black;
+  outline: none;
+  padding: 10px;
+}
+
+.error-msg {
+  color: #FF2831;
+  width: 95%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  text-align: start;
+  text-align: start;
+  width: 100%;
+  padding: 6px 2px;
+}
+
+.status-select {
+  display: flex;
+  justify-content: start;
+  border-radius: 4px;
+  box-sizing: content-box;
+  width: 95%;
+  height: 15px;
+  border: 1px solid rgba(158, 158, 158, 0.922);
+  box-shadow: black;
+  outline: none;
+  padding: 10px;
+}
+
+.form-btn {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  gap: 15px;
+}
+
+.cancel-btn {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  background-color: #ea1c20;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+}
+
+.cancel-btn:hover {
+  background-color: #ec5356;
+}
+
+.submit-btn {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  background-color: rgb(26, 167, 26);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(77, 172, 77);
+}

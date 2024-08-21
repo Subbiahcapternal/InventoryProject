@@ -1,0 +1,299 @@
+.inventory-container {
+    width: 100%;
+    height: 100vh;
+    /* padding: 5px; */
+}
+
+.inventory-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.heading-name {
+    padding: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: black;
+    width: 20%;
+}
+
+.title {
+    text-align: start;
+    padding-bottom: 5px;
+}
+
+.sub-title {
+    text-align: start;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    opacity: 0.6;
+}
+
+.sub-title-ul {
+    list-style: none;
+}
+
+.sub-title-list {
+    display: inline;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.sub-title-link {
+    color: black;
+}
+
+.sub-title-link:hover {
+    color: #f28c39;
+    opacity: 1;
+}
+
+.inventory-btn {
+    /* background-color: aqua; */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-inventory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f28c39;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-btn {
+    width: 150px;
+    height: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    /* padding: 5px; */
+    margin-right: 10px;
+    margin-left: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add-icon {
+    padding: 10px 0 10px 15px;
+    cursor: pointer;
+}
+
+.add-inventory:hover {
+    background-color: rgb(246, 191, 143)
+}
+
+.export-inventory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 130px;
+    height: 40px;
+    color: #f28c39;
+    border: 1px solid #f28c39;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.export-btn {
+    width: 100px;
+    height: 20px;
+    background-color: transparent;
+    color: #f28c39;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    margin-left: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.export-icon {
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+}
+
+.export-inventory:hover {
+    background-color: #f5e3d3
+}
+
+.inventory-content-card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.inventory-content {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.053) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.table-head {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+    gap: 15px
+}
+
+.table-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.373);
+    border-radius: 5px;
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+}
+
+.table-search-icon {
+    padding: 0;
+}
+
+.table-search-input {
+    width: 200px;
+    height: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.table-select {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.373);
+    border-radius: 5px;
+    width: 150px;
+    height: 10px;
+    padding: 10px;
+}
+
+.table-select-icon {
+    padding: 0;
+}
+
+.table-select-input {
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.table-card {
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.table {
+    border-radius: 5px;
+}
+
+th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    /* opacity: 0.5; */
+    padding: 10px;
+}
+
+td {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.items {
+    width: 120px;
+    height: 20px;
+    background-color: #d9e4ddbc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.action-ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.action-list {
+    display: inline;
+    padding: 5px;
+}
+
+.update-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #007DFE;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #92c2f2;
+}
+
+.view-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #14ae4a;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-btn:hover {
+    background-color: #4fe182;
+}
+
+.delete-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #ee1c1f;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #f05a5c;
+}
