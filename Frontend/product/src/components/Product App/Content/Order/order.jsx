@@ -229,7 +229,7 @@ const Order = () => {
 
     // List 
     useEffect(() => {
-        fetch('http://localhost:5003/order/list')
+        fetch('http://localhost:5000/order/list')
             .then(response => {
                 if (!response.ok) {
                     console.log("Error fetching data")
@@ -250,7 +250,7 @@ const Order = () => {
     }, [])
 
     const getOrderData = async () => {
-        let resp = await fetch('http://localhost:5003/order/list')
+        let resp = await fetch('http://localhost:5000/order/list')
         let result = await resp.json();
         setOrderList(result)
     }
@@ -261,7 +261,7 @@ const Order = () => {
             method: 'DELETE'
         }
 
-        let response = await fetch(`http://localhost:5003/order/delete/${id}`, headers)
+        let response = await fetch(`http://localhost:5000/order/delete/${id}`, headers)
         let result = await response.json()
         getOrderData(result)
     }
@@ -275,7 +275,7 @@ const Order = () => {
                 'Content-type': 'application/json; charset=UTF-8'
             },
         }
-        let resp = await fetch('http://localhost:5003/order/add', headers)
+        let resp = await fetch('http://localhost:5000/order/add', headers)
         let result = await resp.json()
         getOrderData(result)
     }
@@ -291,7 +291,7 @@ const Order = () => {
         }
 
         let id = orderInput._id
-        let response = await fetch(`http://localhost:5003/order/edit/${id}`, headers)
+        let response = await fetch(`http://localhost:5000/order/edit/${id}`, headers)
         let result = await response.json()
         getOrderData(result)
     }

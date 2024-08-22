@@ -212,7 +212,7 @@ const Stock = () => {
 
     // List 
     useEffect(() => {
-        fetch('http://localhost:5002/stock/list')
+        fetch('http://localhost:5000/stock/list')
             .then(response => {
                 if (!response.ok) {
                     console.log("Error fetching data")
@@ -233,7 +233,7 @@ const Stock = () => {
     }, [])
 
     const getStockData = async () => {
-        let resp = await fetch('http://localhost:5002/stock/list')
+        let resp = await fetch('http://localhost:5000/stock/list')
         let result = await resp.json();
         setStockList(result)
     }
@@ -244,7 +244,7 @@ const Stock = () => {
             method: 'DELETE'
         }
 
-        let response = await fetch(`http://localhost:5002/stock/delete/${id}`, headers)
+        let response = await fetch(`http://localhost:5000/stock/delete/${id}`, headers)
         let result = await response.json()
         getStockData(result)
     }
@@ -258,7 +258,7 @@ const Stock = () => {
                 'Content-type': 'application/json; charset=UTF-8'
             },
         }
-        let resp = await fetch('http://localhost:5002/stock/add', headers)
+        let resp = await fetch('http://localhost:5000/stock/add', headers)
         let result = await resp.json()
         getStockData(result)
     }
@@ -274,7 +274,7 @@ const Stock = () => {
         }
 
         let id = stockInput._id
-        let response = await fetch(`http://localhost:5002/stock/edit/${id}`, headers)
+        let response = await fetch(`http://localhost:5000/stock/edit/${id}`, headers)
         let result = await response.json()
         getStockData(result)
     }

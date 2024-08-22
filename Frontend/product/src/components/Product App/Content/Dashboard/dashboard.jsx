@@ -49,7 +49,7 @@ const Dashboard = () => {
 
     // List 
     useEffect(() => {
-        fetch('http://localhost:5001/product/list')
+        fetch('http://localhost:5000/product/list')
             .then(response => {
                 if (!response.ok) {
                     console.log("Error fetching data")
@@ -75,7 +75,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-        fetch('http://localhost:5002/stock/list')
+        fetch('http://localhost:5000/stock/list')
             .then(response => {
                 if (!response.ok) {
                     console.log("Error fetching data")
@@ -88,7 +88,7 @@ const Dashboard = () => {
             .catch(err => {
                 console.log(err);
             })
-        fetch('http://localhost:5003/order/list')
+        fetch('http://localhost:5000/order/list')
             .then(response => {
                 if (!response.ok) {
                     console.log("Error fetching data")

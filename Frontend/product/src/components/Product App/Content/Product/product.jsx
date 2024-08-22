@@ -215,7 +215,7 @@ const Product = () => {
 
     // List 
     useEffect(() => {
-        fetch('http://localhost:5001/product/list')
+        fetch('http://localhost:5000/product/list')
             .then(response => {
                 if (!response.ok) {
                     console.log("Error fetching data")
@@ -236,7 +236,7 @@ const Product = () => {
     }, [])
 
     const getProductData = async () => {
-        let resp = await fetch('http://localhost:5001/product/list')
+        let resp = await fetch('http://localhost:5000/product/list')
         let result = await resp.json();
         setProductList(result)
     }
@@ -247,7 +247,7 @@ const Product = () => {
             method: 'DELETE'
         }
 
-        let response = await fetch(`http://localhost:5001/product/delete/${id}`, headers)
+        let response = await fetch(`http://localhost:5000/product/delete/${id}`, headers)
         let result = await response.json()
         getProductData(result)
     }
@@ -261,7 +261,7 @@ const Product = () => {
                 'Content-type': 'application/json; charset=UTF-8'
             },
         }
-        let resp = await fetch('http://localhost:5001/product/add', headers)
+        let resp = await fetch('http://localhost:5000/product/add', headers)
         let result = await resp.json()
         getProductData(result)
     }
@@ -277,7 +277,7 @@ const Product = () => {
         }
 
         let id = productInput._id
-        let response = await fetch(`http://localhost:5001/product/edit/${id}`, headers)
+        let response = await fetch(`http://localhost:5000/product/edit/${id}`, headers)
         let result = await response.json()
         getProductData(result)
     }
