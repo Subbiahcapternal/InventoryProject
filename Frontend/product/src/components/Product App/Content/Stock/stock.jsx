@@ -9,6 +9,7 @@ import Modal from "../../../Popup/Modal/modal";
 import validator from "validator";
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Stock = () => {
@@ -234,17 +235,6 @@ const Stock = () => {
         setStockList(result)
     }
 
-    // Delete
-    const handleDelete = async (id) => {
-        let headers = {
-            method: 'DELETE'
-        }
-
-        let response = await fetch(`http://localhost:5000/stock/delete/${id}`, headers)
-        let result = await response.json()
-        getStockData(result)
-    }
-
     // Add
     const addStock = async () => {
         let headers = {
@@ -256,6 +246,7 @@ const Stock = () => {
         }
         let resp = await fetch('http://localhost:5000/stock/add', headers)
         let result = await resp.json()
+        toast.success("Stock Added Successfully")
         getStockData(result)
     }
 
@@ -272,6 +263,19 @@ const Stock = () => {
         let id = stockInput._id
         let response = await fetch(`http://localhost:5000/stock/edit/${id}`, headers)
         let result = await response.json()
+        toast.success("Stock Updated Successfully")
+        getStockData(result)
+    }
+
+    // Delete
+    const handleDelete = async (id) => {
+        let headers = {
+            method: 'DELETE'
+        }
+
+        let response = await fetch(`http://localhost:5000/stock/delete/${id}`, headers)
+        let result = await response.json()
+        toast.success("Stock Deleted Successfully")
         getStockData(result)
     }
 
@@ -377,11 +381,11 @@ const Stock = () => {
                                                     {error.cetagory && <span className="error-msg">{error.cetagory}</span>}
                                                 </div>
                                                 <div className="form-control">
-                                                    <label className="form-label">Quanity</label>
+                                                    <label className="form-label">Quantity</label>
                                                     <input
                                                         className="form-input"
                                                         name="quanity"
-                                                        placeholder="Enter Quanity"
+                                                        placeholder="Enter Quantity"
                                                         value={stockInput.quanity}
                                                         onChange={handleChange}
                                                     />
@@ -499,7 +503,7 @@ const Stock = () => {
                                             <div className="stock-others">
                                                 <ul className="others-ul">
                                                     <li className="others-list"><p className="stock-first">Category :</p> <p className="stock-second">{item.cetagory}</p></li>
-                                                    <li className="others-list"><p className="stock-first">Quanity :</p> <p className="stock-second">{item.quanity}/100</p> </li>
+                                                    <li className="others-list"><p className="stock-first">Quantity :</p> <p className="stock-second">{item.quanity}/100</p> </li>
                                                     <li className="others-list"><p className="stock-first">Location :</p> <p className="stock-second">{item.location}</p> </li>
                                                     <li className="others-list"><p className="stock-first">Status :</p><p className="stock-second"><span className="status-stock" style={{ color: getColor(item.status), backgroundColor: getBgColor(item.status) }}>{item.status}</span> </p></li>
                                                 </ul>
@@ -511,7 +515,11 @@ const Stock = () => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
         </>
 
     )

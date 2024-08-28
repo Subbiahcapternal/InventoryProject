@@ -9,6 +9,7 @@ import { RiEditLine } from "react-icons/ri";
 import validator from "validator";
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Product = () => {
@@ -238,17 +239,6 @@ const Product = () => {
         setProductList(result)
     }
 
-    // Delete
-    const handleDelete = async (id) => {
-        let headers = {
-            method: 'DELETE'
-        }
-
-        let response = await fetch(`http://localhost:5000/product/delete/${id}`, headers)
-        let result = await response.json()
-        getProductData(result)
-    }
-
     // Add
     const addProduct = async () => {
         let headers = {
@@ -260,6 +250,7 @@ const Product = () => {
         }
         let resp = await fetch('http://localhost:5000/product/add', headers)
         let result = await resp.json()
+        toast.success("Product Added Successfully")
         getProductData(result)
     }
 
@@ -276,6 +267,19 @@ const Product = () => {
         let id = productInput._id
         let response = await fetch(`http://localhost:5000/product/edit/${id}`, headers)
         let result = await response.json()
+        toast.success("Product Updated Successfully")
+        getProductData(result)
+    }
+
+    // Delete
+    const handleDelete = async (id) => {
+        let headers = {
+            method: 'DELETE'
+        }
+
+        let response = await fetch(`http://localhost:5000/product/delete/${id}`, headers)
+        let result = await response.json()
+        toast.success("Product Deleted Successfully")
         getProductData(result)
     }
 
@@ -501,7 +505,11 @@ const Product = () => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
         </>
 
     )

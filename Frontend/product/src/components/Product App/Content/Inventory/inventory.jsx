@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import validator from 'validator'
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Inventory = () => {
@@ -202,17 +203,6 @@ const Inventory = () => {
         setInventoryList(result)
     }
 
-    // Delete
-    const handleDelete = async (id) => {
-        let headers = {
-            method: 'DELETE'
-        }
-
-        let response = await fetch(`http://localhost:5000/inventory/delete/${id}`, headers)
-        let result = await response.json()
-        getInventoryData(result)
-    }
-
     // Add
     const addInventory = async () => {
         let headers = {
@@ -224,6 +214,7 @@ const Inventory = () => {
         }
         let resp = await fetch('http://localhost:5000/inventory/add', headers)
         let result = await resp.json()
+        toast.success('Inventory Added Successfully')
         getInventoryData(result)
     }
 
@@ -240,6 +231,19 @@ const Inventory = () => {
         let id = inventoryInput._id
         let response = await fetch(`http://localhost:5000/inventory/edit/${id}`, headers)
         let result = await response.json()
+        toast.success('Inventory Updated Successfully')
+        getInventoryData(result)
+    }
+
+    // Delete
+    const handleDelete = async (id) => {
+        let headers = {
+            method: 'DELETE'
+        }
+
+        let response = await fetch(`http://localhost:5000/inventory/delete/${id}`, headers)
+        let result = await response.json()
+        toast.success('Inventory Deleted Successfully')
         getInventoryData(result)
     }
 
@@ -335,11 +339,11 @@ const Inventory = () => {
                                                     {error.product_id && <span className="error-msg">{error.product_id}</span>}
                                                 </div>
                                                 <div className="form-control">
-                                                    <label className="form-label">Cetagory</label>
+                                                    <label className="form-label">Category</label>
                                                     <input
                                                         className="form-input"
                                                         name="cetagory"
-                                                        placeholder="Enter Cetagory"
+                                                        placeholder="Enter Category"
                                                         value={inventoryInput.cetagory}
                                                         onChange={handleChange}
                                                     />
@@ -427,7 +431,7 @@ const Inventory = () => {
                                         <th>No.</th>
                                         <th>Product</th>
                                         <th>Product ID</th>
-                                        <th>Cetagory</th>
+                                        <th>Category</th>
                                         <th>Location</th>
                                         <th>Available</th>
                                         <th>Reserved</th>
@@ -488,6 +492,10 @@ const Inventory = () => {
                     </div>
                 </div>
             </div >
+            < Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
         </>
 
     )

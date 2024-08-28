@@ -9,6 +9,7 @@ import Modal from "../../../Popup/Modal/modal";
 import validator from "validator";
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Order = () => {
@@ -252,17 +253,6 @@ const Order = () => {
         setOrderList(result)
     }
 
-    // Delete
-    const handleDelete = async (id) => {
-        let headers = {
-            method: 'DELETE'
-        }
-
-        let response = await fetch(`http://localhost:5000/order/delete/${id}`, headers)
-        let result = await response.json()
-        getOrderData(result)
-    }
-
     // Add
     const addOrder = async () => {
         let headers = {
@@ -274,6 +264,7 @@ const Order = () => {
         }
         let resp = await fetch('http://localhost:5000/order/add', headers)
         let result = await resp.json()
+        toast.success("Order Added Succesfully")
         getOrderData(result)
     }
 
@@ -290,6 +281,19 @@ const Order = () => {
         let id = orderInput._id
         let response = await fetch(`http://localhost:5000/order/edit/${id}`, headers)
         let result = await response.json()
+        toast.success("Order Updated Successfully")
+        getOrderData(result)
+    }
+
+    // Delete
+    const handleDelete = async (id) => {
+        let headers = {
+            method: 'DELETE'
+        }
+
+        let response = await fetch(`http://localhost:5000/order/delete/${id}`, headers)
+        let result = await response.json()
+        toast.success("Order Deleted Successfully")
         getOrderData(result)
     }
 
@@ -546,6 +550,10 @@ const Order = () => {
                     </div>
                 </div>
             </div >
+            <Toaster
+                position="top-right"
+                reverseOrder={true}
+            />
         </>
 
     )
