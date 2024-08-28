@@ -4,19 +4,18 @@ const mongoose = require("mongoose")
 app.use(express.json());
 const cors = require("cors")
 app.use(cors());
-require('dotenv').config();
+require('dotenv').config({ path: "../.env" });
 
 
-const {  Inventory, Product, Order, Stock } = require('../Models/models');
+const { Inventory, Product, Order, Stock } = require('../Models/models');
 
 
 //Mongoose connection
-mongoose.connect('mongodb+srv://subbiah01999:subbiah27@cluster0.gkrwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-
+mongoose.connect(process.env.MONGO_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    }).then(() => app.listen(5000, () => {
+    }).then(() => app.listen(process.env.PORT, () => {
         console.log("Server started");
     })).catch((error) => console.log(error))
 
@@ -108,7 +107,7 @@ app.post("/product/add", async (req, res) => {
 //update
 app.put("/product/edit/:id", async (req, res) => {
     const id = req.params.id;
-    const { _id,  product_name, product_id, price, stock, status  } = req.body
+    const { _id, product_name, product_id, price, stock, status } = req.body
     if (id === _id) {
         try {
             const product = await Product.findByIdAndUpdate(id, req.body, { new: true });
@@ -164,7 +163,7 @@ app.post("/stock/add", async (req, res) => {
 //update
 app.put("/stock/edit/:id", async (req, res) => {
     const id = req.params.id;
-    const { _id,  product_name, product_id, cetagory, quanity, location, status  } = req.body
+    const { _id, product_name, product_id, cetagory, quanity, location, status } = req.body
     if (id === _id) {
         try {
             const stock = await Stock.findByIdAndUpdate(id, req.body, { new: true });
