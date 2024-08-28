@@ -32,7 +32,7 @@ app.get("/inventory/list", async (req, res) => {
 
 //create
 app.post("/inventory/add", async (req, res) => {
-    const { product_name, product_id, cetagory, location, available, reserved, on_hand } = req.body;
+    const { product_name, product_id, cetagory, location, available, reserved } = req.body;
     try {
         await Inventory.create({
             product_name,
@@ -40,8 +40,7 @@ app.post("/inventory/add", async (req, res) => {
             cetagory,
             location,
             available,
-            reserved,
-            on_hand,
+            reserved
         })
         res.status(200).json("Inventory Successfully added")
     } catch (error) {
@@ -53,7 +52,7 @@ app.post("/inventory/add", async (req, res) => {
 //update
 app.put("/inventory/edit/:id", async (req, res) => {
     const id = req.params.id;
-    const { _id, product_name, product_id, cetagory, location, available, reserved, on_hand } = req.body
+    const { _id, product_name, product_id, cetagory, location, available, reserved } = req.body
     if (id === _id) {
         try {
             const inventory = await Inventory.findByIdAndUpdate(id, req.body, { new: true });

@@ -7,8 +7,7 @@ const InventorySchema = mongoose.Schema(
         cetagory: String,
         location: String,
         reserved: Number,
-        available: Number,
-        on_hand: Number
+        available: Number
     });
 
 const OrderSchema = mongoose.Schema(

@@ -104,13 +104,9 @@ const Stock = () => {
         const { name, value } = data;
         switch (name) {
             case "product_name":
-                let isvalid = validator.isAlpha(value);
                 let isNameEmpty = validator.isEmpty(value);
                 if (isNameEmpty) {
                     setError({ ...error, [name]: "Product Name is required" })
-                }
-                else if (!isvalid) {
-                    setError({ ...error, [name]: "Please enter alphabets only" })
                 } else {
                     setError({ ...error, [name]: "" })
                 }

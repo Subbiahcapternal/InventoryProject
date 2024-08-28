@@ -119,14 +119,11 @@ const Order = () => {
         const { name, value } = data;
         switch (name) {
             case "product_name":
-                let isvalid = validator.isAlpha(value);
                 let isNameEmpty = validator.isEmpty(value);
                 if (isNameEmpty) {
                     setError({ ...error, [name]: "Product Name is required" })
                 }
-                else if (!isvalid) {
-                    setError({ ...error, [name]: "Please enter alphabets only" })
-                } else {
+                else {
                     setError({ ...error, [name]: "" })
                 }
                 break;
@@ -481,7 +478,7 @@ const Order = () => {
                                     id="search"
                                     placeholder="Search"
                                     onChange={handleFilter}
-                                /> 
+                                />
                             </div>
                         </div>
                         <div className="table-card">

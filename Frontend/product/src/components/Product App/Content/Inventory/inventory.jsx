@@ -25,8 +25,7 @@ const Inventory = () => {
             cetagory: "",
             location: "",
             available: "",
-            reserved: "",
-            on_hand: "",
+            reserved: ""
         }
     );
 
@@ -50,14 +49,11 @@ const Inventory = () => {
         const { name, value } = data;
         switch (name) {
             case "product_name":
-                let isvalid = validator.isAlpha(value);
                 let isNameEmpty = validator.isEmpty(value);
                 if (isNameEmpty) {
                     setError({ ...error, [name]: "Product Name is required" })
                 }
-                else if (!isvalid) {
-                    setError({ ...error, [name]: "Please enter alphabets only" })
-                } else {
+                else {
                     setError({ ...error, [name]: "" })
                 }
                 break;
@@ -107,18 +103,6 @@ const Inventory = () => {
                 }
                 else if (!isReserNumber) {
                     setError({ ...error, [name]: "Reserved must be number" })
-                } else {
-                    setError({ ...error, [name]: "" })
-                }
-                break;
-            case "on_hand":
-                let isOnHand = validator.isEmpty(value)
-                let isHandNumber = validator.isNumeric(value)
-                if (isOnHand) {
-                    setError({ ...error, [name]: "On Hand is required" })
-                }
-                else if (!isHandNumber) {
-                    setError({ ...error, [name]: "On Hand must be number" })
                 } else {
                     setError({ ...error, [name]: "" })
                 }
@@ -268,8 +252,7 @@ const Inventory = () => {
                 cetagory: "",
                 location: "",
                 available: "",
-                reserved: "",
-                on_hand: ""
+                reserved: ""
             }
         )
     }
@@ -395,17 +378,6 @@ const Inventory = () => {
                                                     />
                                                     {error.reserved && <span className="error-msg">{error.reserved}</span>}
                                                 </div>
-                                                <div className="form-control">
-                                                    <label className="form-label">On Hand</label>
-                                                    <input
-                                                        className="form-input"
-                                                        name="on_hand"
-                                                        placeholder="Enter On Hand"
-                                                        value={inventoryInput.on_hand}
-                                                        onChange={handleChange}
-                                                    />
-                                                    {error.on_hand && <span className="error-msg">{error.on_hand}</span>}
-                                                </div>
                                                 <div className="form-btn">
                                                     <button className="cancel-btn" type="reset" onClick={handleClose}>Cancel</button>
                                                     {
@@ -421,8 +393,7 @@ const Inventory = () => {
                                                                         error.cetagory === "" &&
                                                                         error.location === "" &&
                                                                         error.available === "" &&
-                                                                        error.reserved === "" &&
-                                                                        error.on_hand === "")
+                                                                        error.reserved === "")
                                                                 }
                                                             >Submit</button>
                                                     }
@@ -460,7 +431,6 @@ const Inventory = () => {
                                         <th>Location</th>
                                         <th>Available</th>
                                         <th>Reserved</th>
-                                        <th>On Hand</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -480,9 +450,6 @@ const Inventory = () => {
                                             item.available
                                                 .toString()
                                                 .includes(inventoryFilter) ||
-                                            item.on_hand
-                                                .toString()
-                                                .includes(inventoryFilter) ||
                                             item.reserved
                                                 .toString()
                                                 .includes(inventoryFilter)
@@ -498,7 +465,6 @@ const Inventory = () => {
                                             <td>{data.location}</td>
                                             <td>{data.available}</td>
                                             <td>{data.reserved}</td>
-                                            <td>{data.on_hand}</td>
                                             <td className="action-btn">
                                                 <ul className="action-ul">
                                                     <li className="action-list">
